@@ -1,0 +1,149 @@
+2020-12-11 14:15:14.179 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 14060 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-12-11 14:15:14.186 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-12-11 14:15:15.325 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:15:15.328 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:15:15.375 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36ms. Found 0 Elasticsearch repository interfaces.
+2020-12-11 14:15:15.382 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:15:15.384 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:15:15.391 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-12-11 14:15:15.412 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:15:15.414 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-12-11 14:15:15.438 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-12-11 14:15:16.238 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-11 14:15:16.252 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-11 14:15:16.253 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-11 14:15:16.254 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-11 14:15:16.483 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-12-11 14:15:16.483 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2221 ms
+2020-12-11 14:15:17.478 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-12-11 14:15:17.502 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-11 14:16:12.245 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 3324 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-12-11 14:16:12.249 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-12-11 14:16:13.282 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:16:13.284 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:16:13.315 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24ms. Found 0 Elasticsearch repository interfaces.
+2020-12-11 14:16:13.319 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:16:13.321 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:16:13.327 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-12-11 14:16:13.344 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:16:13.346 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-12-11 14:16:13.364 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-12-11 14:16:14.208 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-11 14:16:14.221 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-11 14:16:14.223 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-11 14:16:14.223 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-11 14:16:14.373 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-12-11 14:16:14.373 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2026 ms
+2020-12-11 14:16:15.178 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-12-11 14:16:15.189 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-11 14:18:30.939 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 13160 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-12-11 14:18:30.945 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-12-11 14:20:24.872 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 9636 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-12-11 14:20:24.877 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-12-11 14:20:25.868 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:20:25.870 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:20:25.907 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 Elasticsearch repository interfaces.
+2020-12-11 14:20:25.911 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:20:25.913 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:20:25.918 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-12-11 14:20:25.934 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:20:25.936 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-12-11 14:20:25.952 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-12-11 14:20:26.760 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-11 14:20:26.772 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-11 14:20:26.773 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-11 14:20:26.773 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-11 14:20:26.905 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-12-11 14:20:26.906 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1918 ms
+2020-12-11 14:20:27.709 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-12-11 14:20:27.721 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-11 14:27:52.007 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 10704 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-12-11 14:27:52.013 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-12-11 14:27:52.988 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:27:52.990 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:27:53.020 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25ms. Found 0 Elasticsearch repository interfaces.
+2020-12-11 14:27:53.025 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:27:53.026 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:27:53.032 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-12-11 14:27:53.047 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:27:53.048 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-12-11 14:27:53.065 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Redis repository interfaces.
+2020-12-11 14:27:53.805 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-11 14:27:53.816 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-11 14:27:53.817 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-11 14:27:53.817 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-11 14:27:53.941 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-12-11 14:27:53.942 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1821 ms
+2020-12-11 14:28:19.559 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-12-11 14:28:19.571 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-11 14:28:41.635 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 10060 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-12-11 14:28:41.640 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-12-11 14:28:42.630 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:28:42.632 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:28:42.669 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 Elasticsearch repository interfaces.
+2020-12-11 14:28:42.675 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:28:42.676 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:28:42.681 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-12-11 14:28:42.696 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:28:42.698 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-12-11 14:28:42.713 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-12-11 14:28:43.612 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-11 14:28:43.622 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-11 14:28:43.624 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-11 14:28:43.624 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-11 14:28:43.739 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-12-11 14:28:43.740 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2005 ms
+2020-12-11 14:28:49.777 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-12-11 14:28:49.793 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-11 14:29:18.620 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 15056 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-12-11 14:29:18.625 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-12-11 14:29:19.538 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:29:19.540 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:29:19.570 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24ms. Found 0 Elasticsearch repository interfaces.
+2020-12-11 14:29:19.575 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:29:19.575 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:29:19.582 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-12-11 14:29:19.599 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:29:19.602 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-12-11 14:29:19.616 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-12-11 14:29:20.328 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-11 14:29:20.341 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-11 14:29:20.343 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-11 14:29:20.344 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-11 14:29:20.466 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-12-11 14:29:20.467 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1751 ms
+2020-12-11 14:30:52.013 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-12-11 14:30:52.037 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-11 14:30:58.301 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 14368 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-12-11 14:30:58.305 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-12-11 14:30:59.470 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:30:59.472 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:30:59.505 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27ms. Found 0 Elasticsearch repository interfaces.
+2020-12-11 14:30:59.509 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:30:59.510 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-12-11 14:30:59.517 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-12-11 14:30:59.533 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-11 14:30:59.535 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-12-11 14:30:59.551 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Redis repository interfaces.
+2020-12-11 14:31:00.251 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-11 14:31:00.262 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-11 14:31:00.262 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-11 14:31:00.263 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-11 14:31:00.394 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-12-11 14:31:00.394 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1959 ms
+2020-12-11 14:33:02.629 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-12-11 14:33:02.649 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.

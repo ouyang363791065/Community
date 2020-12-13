@@ -1,0 +1,267 @@
+2020-11-20 14:07:36.690 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 11920 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 14:07:36.708 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 14:07:38.836 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:07:38.840 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 14:07:38.898 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 14:07:38.904 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:07:38.905 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 14:07:38.913 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 14:07:38.942 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:07:38.950 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 14:07:38.994 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+2020-11-20 14:07:40.636 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 14:07:40.651 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 14:07:40.652 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 14:07:40.653 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 14:07:40.819 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-20 14:07:40.819 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3993 ms
+2020-11-20 14:07:42.742 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-11-20 14:07:42.757 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-20 14:26:51.358 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 7820 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 14:26:51.363 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 14:26:52.287 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:26:52.289 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 14:26:52.317 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 14:26:52.321 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:26:52.321 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 14:26:52.326 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 14:26:52.339 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:26:52.340 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 14:26:52.354 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3ms. Found 0 Redis repository interfaces.
+2020-11-20 14:26:53.065 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 14:26:53.076 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 14:26:53.077 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 14:26:53.078 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 14:26:53.201 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-11-20 14:26:53.201 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1750 ms
+2020-11-20 14:26:54.898 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 14:26:55.057 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-11-20 14:26:57.760 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2020-11-20 14:26:57.760 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+2020-11-20 14:26:57.761 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+2020-11-20 14:26:58.302 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 20ec22c7-77c4-4140-b091-7f2854f1b401
+
+2020-11-20 14:26:58.508 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29ccab93, org.springframework.security.web.context.SecurityContextPersistenceFilter@17a77a7e, org.springframework.security.web.header.HeaderWriterFilter@4aa517c3, org.springframework.security.web.csrf.CsrfFilter@5f8df69, org.springframework.security.web.authentication.logout.LogoutFilter@774304ca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a116ca6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5d15789f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7e2a76be, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@30b9728f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59014efe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4caf875c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24b8a393, org.springframework.security.web.session.SessionManagementFilter@3a13f663, org.springframework.security.web.access.ExceptionTranslationFilter@5897aae1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56d5460f]
+2020-11-20 14:26:58.704 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-20 14:26:58.738 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2020-11-20 14:26:58.750 [main] INFO  com.ouyang.community.CommunityApplication - Started CommunityApplication in 8.361 seconds (JVM running for 9.868)
+2020-11-20 14:31:33.121 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-20 14:34:45.692 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 12540 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 14:34:45.697 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 14:34:46.602 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:34:46.605 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 14:34:46.636 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 14:34:46.641 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:34:46.641 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 14:34:46.646 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 14:34:46.660 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:34:46.661 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 14:34:46.678 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Redis repository interfaces.
+2020-11-20 14:34:47.426 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 14:34:47.438 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 14:34:47.439 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 14:34:47.439 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 14:34:47.559 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-11-20 14:34:47.560 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1794 ms
+2020-11-20 14:34:49.133 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 14:34:49.302 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-11-20 14:34:50.970 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2020-11-20 14:34:50.971 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+2020-11-20 14:34:50.971 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+2020-11-20 14:34:51.211 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 00ef8ceb-04cc-461e-b5ed-eca5696ba961
+
+2020-11-20 14:34:51.312 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c164f81, org.springframework.security.web.context.SecurityContextPersistenceFilter@625f5712, org.springframework.security.web.header.HeaderWriterFilter@11ce9319, org.springframework.security.web.csrf.CsrfFilter@d229912, org.springframework.security.web.authentication.logout.LogoutFilter@b5ff70b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@23e86863, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@51297528, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1bcb8599, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@515940af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@188bf4d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a9f8d47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b671dda, org.springframework.security.web.session.SessionManagementFilter@1b3bb287, org.springframework.security.web.access.ExceptionTranslationFilter@538905d2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7c0ff7a0]
+2020-11-20 14:34:51.497 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2020-11-20 14:34:51.510 [main] INFO  com.ouyang.community.CommunityApplication - Started CommunityApplication in 6.902 seconds (JVM running for 8.291)
+2020-11-20 14:34:51.686 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-20 14:35:03.505 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 4348 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 14:35:03.510 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 14:35:04.464 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:35:04.466 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 14:35:04.494 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 14:35:04.499 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:35:04.500 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 14:35:04.504 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 14:35:04.517 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 14:35:04.518 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 14:35:04.532 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3ms. Found 0 Redis repository interfaces.
+2020-11-20 14:35:05.229 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 14:35:05.239 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 14:35:05.240 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 14:35:05.240 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 14:35:05.355 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-11-20 14:35:05.356 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1740 ms
+2020-11-20 14:35:06.767 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 14:35:06.835 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-11-20 14:35:08.568 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2020-11-20 14:35:08.569 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+2020-11-20 14:35:08.569 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+2020-11-20 14:35:08.840 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d8f2e670-18c3-4b06-9f04-4056087edaae
+
+2020-11-20 14:35:08.952 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@780c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@4dad2363, org.springframework.security.web.header.HeaderWriterFilter@4cacccbf, org.springframework.security.web.csrf.CsrfFilter@4a5fab78, org.springframework.security.web.authentication.logout.LogoutFilter@103bcc9f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a06eeef, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@56e8a8a0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1b3bb287, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3bda1f0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57920d6c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e20a985, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ec5aad, org.springframework.security.web.session.SessionManagementFilter@6f80cf5, org.springframework.security.web.access.ExceptionTranslationFilter@5ffd35dd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f6906f4]
+2020-11-20 14:35:09.140 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-20 14:35:09.158 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2020-11-20 14:35:09.169 [main] INFO  com.ouyang.community.CommunityApplication - Started CommunityApplication in 6.754 seconds (JVM running for 8.339)
+2020-11-20 14:41:02.879 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 14:41:02.879 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 14:41:02.888 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-11-20 15:11:57.816 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-20 15:13:49.378 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 4240 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 15:13:49.382 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 15:13:50.354 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 15:13:50.356 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 15:13:50.394 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 15:13:50.398 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 15:13:50.399 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 15:13:50.404 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 15:13:50.417 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 15:13:50.419 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 15:13:50.436 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-11-20 15:13:51.173 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 15:13:51.183 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 15:13:51.185 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 15:13:51.185 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 15:13:51.307 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-11-20 15:13:51.307 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1833 ms
+2020-11-20 15:13:52.875 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 15:13:52.949 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-11-20 15:13:54.696 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2020-11-20 15:13:54.696 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+2020-11-20 15:13:54.696 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+2020-11-20 15:13:54.957 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: cd6e41d8-83f5-4035-a073-58d197c6faee
+
+2020-11-20 15:13:55.076 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@537451d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c6fb501, org.springframework.security.web.header.HeaderWriterFilter@10408ea, org.springframework.security.web.csrf.CsrfFilter@3cb173db, org.springframework.security.web.authentication.logout.LogoutFilter@55f6f965, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a63d248, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1191029d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@785d6a98, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@57515944, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e6b379c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@578d472a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@614d7fbf, org.springframework.security.web.session.SessionManagementFilter@186dcb05, org.springframework.security.web.access.ExceptionTranslationFilter@2210e466, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ac9e53c]
+2020-11-20 15:13:55.284 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-20 15:13:55.305 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2020-11-20 15:13:55.320 [main] INFO  com.ouyang.community.CommunityApplication - Started CommunityApplication in 6.983 seconds (JVM running for 8.594)
+2020-11-20 15:16:12.991 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 15:16:12.992 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 15:16:13.002 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2020-11-20 16:41:02.178 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-20 17:05:09.195 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 15312 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 17:05:09.200 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 17:05:10.168 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:05:10.171 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 17:05:10.199 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 17:05:10.203 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:05:10.204 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 17:05:10.209 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 17:05:10.223 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:05:10.224 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 17:05:10.239 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-11-20 17:05:10.961 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 17:05:10.971 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 17:05:10.973 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 17:05:10.973 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 17:05:11.093 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-11-20 17:05:11.094 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1803 ms
+2020-11-20 17:05:12.777 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 17:05:12.859 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-11-20 17:05:14.661 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2020-11-20 17:05:14.663 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+2020-11-20 17:05:14.663 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+2020-11-20 17:05:14.924 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 2a48a868-2d73-4f99-bd8a-fcbb1d01d3a7
+
+2020-11-20 17:05:15.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b7e4b20, org.springframework.security.web.context.SecurityContextPersistenceFilter@215a0264, org.springframework.security.web.header.HeaderWriterFilter@3063be68, org.springframework.security.web.csrf.CsrfFilter@4efe014f, org.springframework.security.web.authentication.logout.LogoutFilter@2125535d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@23358740, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@70421a08, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5ac0bf84, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5d8fd077, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@103478b8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32069394, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fefc5ea, org.springframework.security.web.session.SessionManagementFilter@2d2f09a4, org.springframework.security.web.access.ExceptionTranslationFilter@50e8ed74, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@103bcc9f]
+2020-11-20 17:05:15.236 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-20 17:05:15.254 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2020-11-20 17:05:15.265 [main] INFO  com.ouyang.community.CommunityApplication - Started CommunityApplication in 7.091 seconds (JVM running for 8.86)
+2020-11-20 17:06:11.251 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 17:06:11.251 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 17:06:11.260 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-11-20 17:07:39.704 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-20 17:09:06.635 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 1972 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 17:09:06.642 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 17:09:08.037 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:09:08.039 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 17:09:08.076 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 17:09:08.084 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:09:08.084 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 17:09:08.089 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 17:09:08.106 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:09:08.108 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 17:09:08.125 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-11-20 17:09:08.677 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 17:09:08.686 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 17:09:08.686 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 17:09:08.687 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 17:09:08.794 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-11-20 17:09:08.795 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2065 ms
+2020-11-20 17:09:10.029 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 17:09:10.106 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-11-20 17:09:11.915 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2020-11-20 17:09:11.916 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+2020-11-20 17:09:11.916 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+2020-11-20 17:09:12.230 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-20 17:09:12.259 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2020-11-20 17:09:12.269 [main] INFO  com.ouyang.community.CommunityApplication - Started CommunityApplication in 6.712 seconds (JVM running for 8.268)
+2020-11-20 17:12:31.628 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 17:12:31.629 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 17:12:31.638 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-11-20 17:12:46.799 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 4024 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 17:12:46.805 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 17:12:48.132 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:12:48.134 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 17:12:48.169 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 17:12:48.174 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:12:48.175 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 17:12:48.180 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 17:12:48.194 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:12:48.196 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 17:12:48.211 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-11-20 17:12:48.901 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 17:12:48.911 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 17:12:48.912 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 17:12:48.913 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 17:12:49.093 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-11-20 17:12:49.093 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2186 ms
+2020-11-20 17:12:50.567 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 17:12:50.645 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-11-20 17:12:52.403 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2020-11-20 17:12:52.404 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+2020-11-20 17:12:52.404 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+2020-11-20 17:12:52.806 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-20 17:12:52.822 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2020-11-20 17:12:52.833 [main] INFO  com.ouyang.community.CommunityApplication - Started CommunityApplication in 7.25 seconds (JVM running for 8.726)
+2020-11-20 17:14:30.046 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-20 17:40:59.267 [main] INFO  com.ouyang.community.CommunityApplication - Starting CommunityApplication on DESKTOP-NOJ77EQ with PID 1480 (F:\idea_workspace\Community\target\classes started by ouyang in F:\idea_workspace\Community)
+2020-11-20 17:40:59.273 [main] INFO  com.ouyang.community.CommunityApplication - No active profile set, falling back to default profiles: default
+2020-11-20 17:41:01.480 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:41:01.485 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-11-20 17:41:01.632 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 138ms. Found 0 Elasticsearch repository interfaces.
+2020-11-20 17:41:01.657 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:41:01.663 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-11-20 17:41:01.712 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-11-20 17:41:01.753 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 17:41:01.757 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-20 17:41:01.785 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9ms. Found 0 Redis repository interfaces.
+2020-11-20 17:41:02.886 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-11-20 17:41:02.899 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-20 17:41:02.900 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-20 17:41:02.901 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-20 17:41:03.060 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2020-11-20 17:41:03.060 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3674 ms
+2020-11-20 17:41:04.775 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 17:41:04.846 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-11-20 17:41:06.591 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2020-11-20 17:41:06.591 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client in build: 7.6.2
+2020-11-20 17:41:06.591 [main] INFO  o.s.data.elasticsearch.support.VersionInfo - Version Elasticsearch Client used: 7.6.2
+2020-11-20 17:41:06.948 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-11-20 17:41:06.969 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2020-11-20 17:41:06.990 [main] INFO  com.ouyang.community.CommunityApplication - Started CommunityApplication in 8.908 seconds (JVM running for 11.437)
+2020-11-20 17:41:23.710 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 17:41:23.711 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-20 17:41:23.724 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2020-11-20 17:56:03.543 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

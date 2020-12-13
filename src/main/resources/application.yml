@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/community?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    host: smtp.163.com
+    port: 465
+    username: ouyang363791065@163.com
+    password: ouyang123...
+    protocol: smtps
+  redis:
+    port: 6379
+    host: localhost
+    database: 11
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.ouyang.community.entity
+  configuration:
+    # 原本表中字段和实体类属性是一一对应，这里设置为true自动将下划线替换为驼峰式命名。
+    map-underscore-to-camel-case: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /community
+logging:
+  # 配置日志文件的名称，里面书写日志打印方式以及输出到文件的方式，若不指定文件名，springboot默认扫描logging-spring.xml文件
+  # 更多日志配置详情，参考https://www.jb51.net/article/162591.htm
+  # https://www.cnblogs.com/whalesea/p/10950628.html
+  config: classpath:logback-config.xml
