@@ -12,6 +12,9 @@ import lombok.EqualsAndHashCode;
 public class Message extends EntityBase {
     private Integer fromId;
     private Integer toId;
+    /**
+     * 存通知对应的主题
+     */
     private String conversationId;
     private String content;
     private Integer status;

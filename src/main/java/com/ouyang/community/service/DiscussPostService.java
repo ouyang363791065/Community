@@ -11,20 +11,12 @@ import java.util.List;
  */
 public interface DiscussPostService extends IBaseService<DiscussPost> {
     Integer updateCommentCount(Long id, Integer commentCount);
-
     Integer addDiscussPost(DiscussPost post);
-
     DiscussPost findDiscussPostById(Long id);
-
     Integer updateType(Long id, int type);
-
     Integer updateStatus(Long id, int status);
-
     Integer updateScore(Long id, double score);
-
     void init();
-
-    List<DiscussPost> findDiscussPosts(Integer userId, Integer offset, Integer limit, Integer orderMode);
-
+    List<DiscussPost> findDiscussPosts(Integer offset, Integer limit, String orderMode);
     Integer findDiscussPostRows(Integer userId);
 }

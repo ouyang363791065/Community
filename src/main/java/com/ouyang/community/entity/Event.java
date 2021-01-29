@@ -1,6 +1,6 @@
 package com.ouyang.community.entity;
 
-import lombok.Data;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
  * @author feixi
  * @Description 事件，用于消息队列
  */
-@Data
+@Getter
 public class Event {
     private String topic;
     private Long userId;

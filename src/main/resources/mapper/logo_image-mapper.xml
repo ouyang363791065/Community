@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ouyang.community.mapper.LogoImageMapper">
+    <insert id="insertLogoImage" parameterType="com.ouyang.community.entity.LogoImage">
+        insert into logo_image (create_time,update_time,filename,size,content)
+        values(#{createTime},#{updateTime},#{filename},#{size},#{content})
+    </insert>
+
+    <select id="getLogoImage" parameterType="string" resultType="com.ouyang.community.entity.LogoImage">
+        SELECT  * from logo_image where filename = #{filename}
+    </select>
+</mapper>

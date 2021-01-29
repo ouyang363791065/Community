@@ -1,4 +1,4 @@
-package com.ouyang.community.event;
+package com.ouyang.community.kafka;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ouyang.community.entity.Event;
@@ -10,12 +10,10 @@ import org.springframework.stereotype.Component;
  * @author feixi
  * @Description 事件生产者
  */
-
 @Component
 public class EventProducer {
-
     @Autowired
-    private KafkaTemplate kafkaTemplate;
+    private KafkaTemplate<String,String> kafkaTemplate;
 
     // 处理事件
     public void fireEvent(Event event){

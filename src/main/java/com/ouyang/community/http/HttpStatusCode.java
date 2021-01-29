@@ -1,6 +1,5 @@
 package com.ouyang.community.http;
 
-import com.ouyang.community.enums.CommunityEnum;
 import lombok.Getter;
 
 /**
@@ -20,7 +19,11 @@ public enum HttpStatusCode {
     FIELD_NOT_VALID(-666600301, "字段无效"),
 
     /*** 登入登出错误 ***/
-    LOGOUT_ERROR(-666600401, "登出失败");
+    NOT_LOGIN(-666600401, "您未登入"),
+    LOGOUT_ERROR(-666600402, "登出失败"),
+
+    /*** Security使用到的错误 ***/
+    USER_NO_AUTHORITY(-666600501,"该用户没有权限");
 
     private final Integer code;
     private final String msg;

@@ -7,7 +7,6 @@ import com.ouyang.community.mapper.DiscussPostMapper;
 import com.ouyang.community.service.DiscussPostService;
 import com.ouyang.community.filter.SensitiveFilter;
 import lombok.extern.slf4j.Slf4j;
-import com.github.benmanes.caffeine.cache.CacheLoader;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.util.HtmlUtils;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
@@ -38,14 +38,18 @@ public class DiscussPostServiceImpl extends IBaseServiceImpl<DiscussPostMapper, 
     private int expireSeconds;
 
     // Caffeine核心接口: Cache, LoadingCache, AsyncLoadingCache
-
     // 帖子列表缓存
     private LoadingCache<String, List<DiscussPost>> postListCache;
-
     // 帖子总数缓存
     private LoadingCache<Integer, Integer> postRowsCache;
+    @Resource
+    private DiscussPostMapper discussPostMapper;
 
-    // PostConstruct在构造函数之后执行，init方法之前执行
+    /**
+     * PostConstruct在构造函数之后执行，init方法之前执行
+     * 初始化时设置好缓存对象，在调用get方法时，会先查询缓存对象里面是否有该key命中的缓存，
+     * 若有，则返回，若没有，则调用load方法从磁盘里加载数据，然后放入缓存里，并且返回缓存里的数据
+     */
     @Override
     @PostConstruct
     public void init() {
@@ -53,7 +57,8 @@ public class DiscussPostServiceImpl extends IBaseServiceImpl<DiscussPostMapper, 
         postListCache = Caffeine.newBuilder()
                 .maximumSize(maxSize)
                 .expireAfterWrite(expireSeconds, TimeUnit.SECONDS)
-                .build((CacheLoader<String, List<DiscussPost>>) key -> {
+                .build(key -> {
+                    // key ==> offset:limit
                     if (key.length() == 0) {
                         throw new IllegalArgumentException("参数错误!");
                     }
@@ -65,21 +70,12 @@ public class DiscussPostServiceImpl extends IBaseServiceImpl<DiscussPostMapper, 
                     int limit = Integer.parseInt(params[1]);
                     // TODO:二级缓存：redis->mysql
                     log.debug("load post list from DB.");
-                    /**
-                     * <select id="selectDiscussPosts" resultType="DiscussPost">
-                     *     select <include refid="selectFields"></include>
-                     *     from discuss_post
-                     *     where status != 2
-                     *     <if test="orderMode==1">
-                     *         order by type desc, score desc, create_time desc
-                     *     </if>
-                     *     limit #{offset}, #{limit}
-                     * </select>
-                     */
                     QueryWrapper<DiscussPost> queryWrapper = new QueryWrapper<>();
                     queryWrapper.lambda()
                             .ne(DiscussPost::getStatus, 2)
-                            .orderByDesc(DiscussPost::getType, DiscussPost::getScore, DiscussPost::getCreateTime)
+                            .orderByDesc(DiscussPost::getType)
+                            .orderByDesc(DiscussPost::getScore)
+                            .orderByDesc(DiscussPost::getCreateTime)
                             .last("limit " + offset + " , " + limit);
                     return baseMapper.selectList(queryWrapper);
                 });
@@ -88,19 +84,9 @@ public class DiscussPostServiceImpl extends IBaseServiceImpl<DiscussPostMapper, 
         postRowsCache = Caffeine.newBuilder()
                 .maximumSize(maxSize)
                 .expireAfterWrite(expireSeconds, TimeUnit.SECONDS)
-                .build((CacheLoader<Integer, Integer>) key -> {
+                .build(key -> {
                     // TODO:二级缓存：redis->mysql
                     log.debug("load post list from DB.");
-                    /**
-                     * <select id="selectDiscussPostRows" resultType="int">
-                     *     select count(id)
-                     *     from discuss_post
-                     *     where status != 2
-                     *     <if test="userId!=0">
-                     *         and user_id = #{userId}
-                     *     </if>
-                     * </select>
-                     */
                     QueryWrapper<DiscussPost> queryWrapper = new QueryWrapper<>();
                     if (key != 0) {
                         queryWrapper.lambda().ne(DiscussPost::getStatus, 2).eq(DiscussPost::getUserId, key);
@@ -112,40 +98,36 @@ public class DiscussPostServiceImpl extends IBaseServiceImpl<DiscussPostMapper, 
     }
 
     @Override
-    public List<DiscussPost> findDiscussPosts(Integer userId, Integer offset, Integer limit, Integer orderMode) {
-        // 只有热门帖子(访问首页时，userId=0)
-        if (userId == 0 && orderMode == 1) {
+    public List<DiscussPost> findDiscussPosts(Integer offset, Integer limit, String orderMode) {
+        // 最热帖子走缓存数据
+        if (orderMode.equals("close")) {
+            // 返回给定的key在LoadingCache中的数据，如果cache中没有该key，
+            // 将调用CacheLoader的load方法去load数据，如果load不到数据，将返回null。
             return postListCache.get(offset + ":" + limit);
         }
+        // 最新帖子按照发布时间排序
         log.debug("load post list from DB.");
-        /**
-         * select <include refid="selectFields"></include>
-         *     from discuss_post
-         *     where status != 2
-         *     <if test="userId!=0">
-         *         and user_id = #{userId}
-         *     </if>
-         *     <if test="orderMode==0">
-         *         order by type desc, create_time desc
-         *     </if>
-         *     <if test="orderMode==1">
-         *         order by type desc, score desc, create_time desc
-         *     </if>
-         *     limit #{offset}, #{limit}
-         */
-        //return discussPostMapper.selectDiscussPosts(userId, offset, limit, orderMode);
-        return null;
+        return discussPostMapper.selectList(new QueryWrapper<DiscussPost>().lambda()
+                .ne(DiscussPost::getStatus, 2)
+                .orderByDesc(DiscussPost::getType)
+                .orderByDesc(DiscussPost::getScore)
+                .orderByDesc(DiscussPost::getCreateTime)
+                .last("limit " + offset + " , " + limit));
     }
 
     @Override
     public Integer findDiscussPostRows(Integer userId) {
         // 首页查询走缓存
         if (userId == 0) {
+            // 返回给定的key在LoadingCache中的数据，如果cache中没有该key，
+            // 将调用CacheLoader的load方法去load数据，如果load不到数据，将返回null。
             return postRowsCache.get(userId);
         }
         log.debug("load post list from DB.");
-        //return baseMapper.selectDiscussPostRows(userId);
-        return null;
+        return baseMapper.selectList(new QueryWrapper<DiscussPost>().lambda()
+                .ne(DiscussPost::getStatus, 2)
+                .eq(DiscussPost::getUserId, userId))
+                .size();
     }
 
     @Override

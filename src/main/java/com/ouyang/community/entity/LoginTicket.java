@@ -9,7 +9,7 @@ import java.util.Date;
  * @Description 登录凭证，不与表一一映射，将LoginTicket对象存入redis
  */
 @Data
-public class LoginTicket {
+public class LoginTicket extends EntityBase{
     private Long userId;
     private String ticket;
     /**

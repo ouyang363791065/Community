@@ -11,7 +11,12 @@ import java.util.Map;
  */
 public interface UserService extends IBaseService<User> {
     Integer activation(Integer userId, String code);
+
     Map<String, Object> register(User user);
-    Map<String, Object> login(String username, String password, int expiredSeconds);
+
+    Map<String, Object> login(User user, int expiredSeconds);
+
     void logout(String ticket);
+
+    void updateHeader(Long id, String headerUrl);
 }

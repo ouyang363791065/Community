@@ -2,7 +2,11 @@ package com.ouyang.community.controller;
 
 import com.ouyang.community.entity.*;
 import com.ouyang.community.enums.CommunityEnum;
-import com.ouyang.community.event.EventProducer;
+import com.ouyang.community.kafka.EventProducer;
+import com.ouyang.community.exception.CommunityException;
+import com.ouyang.community.http.HttpResult;
+import com.ouyang.community.http.HttpStatusCode;
+import com.ouyang.community.http.HttpUtil;
 import com.ouyang.community.service.CommentService;
 import com.ouyang.community.service.DiscussPostService;
 import com.ouyang.community.service.LikeService;
@@ -13,6 +17,7 @@ import com.ouyang.community.utils.HostHolder;
 import com.ouyang.community.utils.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -46,20 +51,19 @@ public class DiscussPostController {
     private EventProducer eventProducer;
 
     @Autowired
-    private RedisTemplate<String,Object> redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     // TODO: es
 //    @Autowired
 //    private ElasticsearchService elasticsearchService;
 
     @ResponseBody
-    @GetMapping("/add")
-    public String addDiscussPost(String title, String content) {
-        User user = hostHolder.getUser();
+    @PostMapping("/add")
+    public HttpResult<String> addDiscussPost(String title, String content) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (user == null) {
-            return CommunityUtil.getJSONString(403, "你还没有登录哦!");
+            throw new CommunityException("你还没有登录哦!", HttpStatusCode.NOT_LOGIN);
         }
-
         DiscussPost post = new DiscussPost();
         post.setUserId(user.getId());
         post.setTitle(title);
@@ -73,14 +77,16 @@ public class DiscussPostController {
                 .setUserId(user.getId())
                 .setEntityType(CommunityEnum.ENTITY_TYPE_POST.getCode())
                 .setEntityId(post.getId().intValue());
-        eventProducer.fireEvent(event);
+
+        // TODO:
+        // eventProducer.fireEvent(event);
 
         // 计算帖子分数
         String redisKey = RedisKeyUtil.getPostScoreKey();
         redisTemplate.opsForSet().add(redisKey, post.getId());
 
-        // 报错的情况,将来统一处理.
-        return CommunityUtil.getJSONString(0, "发布成功!");
+        // 报错的情况,将来统一处理。
+        return HttpUtil.buildResult("发布成功", HttpStatusCode.SUCCESS);
     }
 
     @GetMapping("/detail/{discussPostId}")
@@ -96,8 +102,8 @@ public class DiscussPostController {
         long likeCount = likeService.findEntityLikeCount(CommunityEnum.ENTITY_TYPE_POST.getCode(), discussPostId);
         model.addAttribute("likeCount", likeCount);
         // 点赞状态
-        int likeStatus = hostHolder.getUser() == null ? 0 :
-                likeService.findEntityLikeStatus(CommunityEnum.ENTITY_TYPE_POST.getCode(), discussPostId, hostHolder.getUser().getId());
+        int likeStatus = SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof String ? 0 :
+                likeService.findEntityLikeStatus(CommunityEnum.ENTITY_TYPE_POST.getCode(), discussPostId, ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
         model.addAttribute("likeStatus", likeStatus);
 
         // 评论分页信息
@@ -120,13 +126,12 @@ public class DiscussPostController {
                 commentVo.put("comment", comment);
                 // 作者
                 commentVo.put("user", userService.getById(comment.getUserId()));
-
                 //点赞数量
                 likeCount = likeService.findEntityLikeCount(CommunityEnum.ENTITY_TYPE_COMMENT.getCode(), comment.getId().intValue());
                 commentVo.put("likeCount", likeCount);
                 //点赞状态,需要判断当前用户是否登录，没有登录无法点赞
-                likeStatus = hostHolder.getUser() == null ? 0 : likeService.findEntityLikeStatus(
-                        CommunityEnum.ENTITY_TYPE_COMMENT.getCode(), comment.getId().intValue(), hostHolder.getUser().getId());
+                likeStatus = SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof String ? 0 : likeService.findEntityLikeStatus(
+                        CommunityEnum.ENTITY_TYPE_COMMENT.getCode(), comment.getId().intValue(), ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
                 commentVo.put("likeStatus", likeStatus);
                 // 回复列表
                 List<Comment> replyList = commentService.findCommentsByEntity(
@@ -136,30 +141,24 @@ public class DiscussPostController {
                 if (replyList != null) {
                     for (Comment reply : replyList) {
                         Map<String, Object> replyVo = new HashMap<>();
-
                         // 回复
                         replyVo.put("reply", reply);
-
                         // 作者
                         replyVo.put("user", userService.getById(reply.getUserId()));
-
                         // 回复目标
                         User target = reply.getTargetId() == 0 ? null : userService.getById(reply.getTargetId());
                         replyVo.put("target", target);
-
                         //点赞数量
                         likeCount = likeService.findEntityLikeCount(CommunityEnum.ENTITY_TYPE_COMMENT.getCode(), reply.getId().intValue());
                         replyVo.put("likeCount", likeCount);
-
                         //点赞状态,需要判断当前用户是否登录，没有登录无法点赞
-                        likeStatus = hostHolder.getUser() == null ? 0 : likeService.findEntityLikeStatus(
-                                CommunityEnum.ENTITY_TYPE_COMMENT.getCode(), reply.getId().intValue(), hostHolder.getUser().getId());
+                        likeStatus = SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof String ? 0 : likeService.findEntityLikeStatus(
+                                CommunityEnum.ENTITY_TYPE_COMMENT.getCode(), reply.getId().intValue(), ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
                         replyVo.put("likeStatus", likeStatus);
                         replyVoList.add(replyVo);
                     }
                 }
                 commentVo.put("replys", replyVoList);
-
                 // 回复数量
                 int replyCount = commentService.findCommentCount(CommunityEnum.ENTITY_TYPE_COMMENT.getCode(), comment.getId().intValue());
                 commentVo.put("replyCount", replyCount);
@@ -174,31 +173,31 @@ public class DiscussPostController {
 
     // 置顶
     @ResponseBody
-    @RequestMapping(path = "/top", method = RequestMethod.POST)
-    public String setTop(Integer id) {
+    @PostMapping("/top")
+    public HttpResult setTop(Integer id) {
         discussPostService.updateType(new Long(id), 1);
 
         // 触发发帖事件
         Event event = new Event()
                 .setTopic(Constant.TOPIC_PUBLISH)
-                .setUserId(hostHolder.getUser().getId())
+                .setUserId(((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId())
                 .setEntityType(CommunityEnum.ENTITY_TYPE_POST.getCode())
                 .setEntityId(id);
         eventProducer.fireEvent(event);
 
-        return CommunityUtil.getJSONString(0);
+        return HttpUtil.buildSuccessResult(0);
     }
 
     // 加精
-    @RequestMapping(path = "/wonderful", method = RequestMethod.POST)
     @ResponseBody
+    @PostMapping("/wonderful")
     public String setWonderful(Integer id) {
         discussPostService.updateStatus(new Long(id), 1);
 
         // 触发发帖事件
         Event event = new Event()
                 .setTopic(Constant.TOPIC_PUBLISH)
-                .setUserId(hostHolder.getUser().getId())
+                .setUserId(((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId())
                 .setEntityType(CommunityEnum.ENTITY_TYPE_POST.getCode())
                 .setEntityId(id);
         eventProducer.fireEvent(event);
@@ -219,7 +218,7 @@ public class DiscussPostController {
         // 触发删帖事件
         Event event = new Event()
                 .setTopic(Constant.TOPIC_DELETE)
-                .setUserId(hostHolder.getUser().getId())
+                .setUserId(((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId())
                 .setEntityType(CommunityEnum.ENTITY_TYPE_POST.getCode())
                 .setEntityId(id);
         eventProducer.fireEvent(event);

@@ -4,7 +4,7 @@ import com.ouyang.community.entity.Event;
 import com.ouyang.community.entity.Page;
 import com.ouyang.community.entity.User;
 import com.ouyang.community.enums.CommunityEnum;
-import com.ouyang.community.event.EventProducer;
+import com.ouyang.community.kafka.EventProducer;
 import com.ouyang.community.http.HttpResult;
 import com.ouyang.community.http.HttpStatusCode;
 import com.ouyang.community.http.HttpUtil;
@@ -13,6 +13,8 @@ import com.ouyang.community.service.UserService;
 import com.ouyang.community.utils.Constant;
 import com.ouyang.community.utils.HostHolder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -40,27 +42,34 @@ public class FollowController {
     @Autowired
     private EventProducer eventProducer;
 
+    /**
+     * 关注用户
+     *
+     * @param entityType 默认为用户
+     * @param entityId 默认为用户id
+     * @return
+     */
     @ResponseBody
     @PostMapping("/follow")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN', 'MODERATOR')")
     public HttpResult<String> follow(Integer entityType, Integer entityId) {
-        User user = hostHolder.getUser();
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         followService.follow(user.getId(), entityType, entityId);
-        // 注意：目前只实现了关注人，所以setEntityUserId为entityId
+        // 目前只实现了关注人，所以setEntityUserId为entityId
         Event event = new Event()
                 .setTopic(Constant.TOPIC_FOLLOW)
-                .setUserId(hostHolder.getUser().getId())
+                .setUserId(user.getId())
                 .setEntityType(entityType)
                 .setEntityId(entityId)
                 .setEntityUserId(entityId);
-        // TODO: 触发kafka的消息推送
-        //eventProducer.fireEvent(event);
+        eventProducer.fireEvent(event);
         return HttpUtil.buildResult("已关注!", HttpStatusCode.SUCCESS);
     }
 
     @ResponseBody
     @PostMapping("/unfollow")
     public HttpResult<String> unfollow(Integer entityType, Integer entityId) {
-        User user = hostHolder.getUser();
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         followService.unfollow(user.getId(), entityType, entityId);
         return HttpUtil.buildResult("已取消关注!", HttpStatusCode.SUCCESS);
     }
@@ -111,9 +120,10 @@ public class FollowController {
 
     private boolean hasFollowed(Long userId) {
         // 若当前未登入，也是可以查看某个用户的粉丝的，显示的是未关注
-        if (Objects.isNull(hostHolder.getUser())) {
+        if (Objects.isNull(SecurityContextHolder.getContext().getAuthentication().getPrincipal())) {
             return false;
         }
-        return followService.hasFollowed(hostHolder.getUser().getId(), CommunityEnum.ENTITY_TYPE_USER.getCode(), userId.intValue());
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return followService.hasFollowed(user.getId(), CommunityEnum.ENTITY_TYPE_USER.getCode(), userId.intValue());
     }
 }

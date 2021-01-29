@@ -1,11 +1,17 @@
 package com.ouyang.community.entity;
 
+import com.ouyang.community.utils.Constant;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@EqualsAndHashCode(callSuper = true)
+import java.util.ArrayList;
+import java.util.Collection;
+
 @Data
-public class User extends EntityBase{
+@EqualsAndHashCode(callSuper = true)
+public class User extends EntityBase implements UserDetails {
     private String username;
     private String password;
     private String salt;
@@ -22,4 +28,45 @@ public class User extends EntityBase{
     private Integer status;
     private String activationCode;
     private String headerUrl;
+
+    /**
+     * Security根据这个获取用户权限，实现方式为根据type获取用户权限
+     *
+     * @return
+     */
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return new ArrayList<GrantedAuthority>() {{
+            add(() -> {
+                switch (type) {
+                    case 1:
+                        return Constant.AUTHORITY_ADMIN;
+                    case 2:
+                        return Constant.AUTHORITY_MODERATOR;
+                    default:
+                        return Constant.AUTHORITY_USER;
+                }
+            });
+        }};
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return status == 1;
+    }
 }

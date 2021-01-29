@@ -32,18 +32,16 @@ import java.util.*;
 public class UserServiceImpl extends IBaseServiceImpl<UserMapper, User> implements UserService {
     @Autowired
     private MailClient mailClient;
-
     @Autowired
     private TemplateEngine templateEngine;
-
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
-
     @Value("${community.path.domain}")
     private String domain;
-
     @Value("${server.servlet.context-path}")
     private String contextPath;
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public Map<String, Object> register(User user) {
@@ -64,16 +62,12 @@ public class UserServiceImpl extends IBaseServiceImpl<UserMapper, User> implemen
             return map;
         }
         // 验证账号
-        QueryWrapper<User> queryByUsername = new QueryWrapper<>();
-        queryByUsername.lambda().eq(User::getUsername, user.getUsername());
-        if (Objects.isNull(baseMapper.selectOne(queryByUsername))) {
+        if (Objects.nonNull(baseMapper.selectOne(new QueryWrapper<User>().lambda().eq(User::getUsername, user.getUsername())))) {
             map.put("usernameMsg", "该账号已存在!");
             return map;
         }
         // 验证邮箱
-        QueryWrapper<User> queryByEmail = new QueryWrapper<>();
-        queryByEmail.lambda().eq(User::getEmail, user.getEmail());
-        if (Objects.isNull(baseMapper.selectOne(queryByEmail))) {
+        if (Objects.nonNull(baseMapper.selectOne(new QueryWrapper<User>().lambda().eq(User::getEmail, user.getEmail())))) {
             map.put("emailMsg", "该邮箱已被注册!");
             return map;
         }
@@ -92,6 +86,7 @@ public class UserServiceImpl extends IBaseServiceImpl<UserMapper, User> implemen
         // http://localhost:8080/community/activation/101/code
         String url = domain + contextPath + "/activation/" + user.getId() + "/" + user.getActivationCode();
         context.setVariable("url", url);
+        map.put("url", url);
         // 使用模板引擎，渲染/mail/activation页面
         String content = templateEngine.process("/mail/activation", context);
         mailClient.sendMail(user.getEmail(), "激活账号", content);
@@ -99,36 +94,8 @@ public class UserServiceImpl extends IBaseServiceImpl<UserMapper, User> implemen
     }
 
     @Override
-    public Map<String, Object> login(String username, String password, int expiredSeconds) {
+    public Map<String, Object> login(User user, int expiredSeconds) {
         Map<String, Object> map = new HashMap<>();
-        // 空值处理
-        if (StringUtils.isBlank(username)) {
-            map.put("usernameMsg", "账号不能为空!");
-            return map;
-        }
-        if (StringUtils.isBlank(password)) {
-            map.put("passwordMsg", "密码不能为空!");
-            return map;
-        }
-        // 验证账号
-        QueryWrapper<User> queryByUsername = new QueryWrapper<>();
-        queryByUsername.lambda().eq(User::getUsername, username);
-        User user = baseMapper.selectOne(queryByUsername);
-        if (Objects.isNull(user)) {
-            map.put("usernameMsg", "该账号不存在!");
-            return map;
-        }
-        // 验证状态
-        if (user.getStatus() == 0) {
-            map.put("usernameMsg", "该账号未激活!");
-            return map;
-        }
-        // 验证密码
-        password = CommunityUtil.md5(password + user.getSalt());
-        if (!user.getPassword().equals(password)) {
-            map.put("passwordMsg", "密码不正确!");
-            return map;
-        }
         // 生成登录凭证
         LoginTicket loginTicket = new LoginTicket();
         loginTicket.setUserId(user.getId());
@@ -157,7 +124,7 @@ public class UserServiceImpl extends IBaseServiceImpl<UserMapper, User> implemen
     }
 
     public void logout(String ticket) {
-        //使用redis，更改ticket状态。不使用删除，为了后期进行登录相关的统计
+        // 使用redis，更改ticket状态。不使用删除，为了后期进行登录相关的统计
         String ticketKey = RedisKeyUtil.getTicketKey(ticket);
         LoginTicket loginTicket = (LoginTicket) redisTemplate.opsForValue().get(ticketKey);
         if (Objects.isNull(loginTicket)) {
@@ -165,5 +132,23 @@ public class UserServiceImpl extends IBaseServiceImpl<UserMapper, User> implemen
         }
         loginTicket.setStatus(Constant.LOGOUT);
         redisTemplate.opsForValue().set(ticketKey, loginTicket);
+    }
+
+    @Override
+    public void updateHeader(Long id, String headerUrl) {
+        // 先去更新，再去清理缓存。可以避免更新数据库失败，缓存消失的现象。现在：数据库更新失败，缓存不会清除
+        User user = new User();
+        user.setId(id);
+        userMapper.updateById(new User() {{
+            setId(id);
+            setHeaderUrl(headerUrl);
+        }});
+        clearCache(id);
+    }
+
+    // 更新用户信息，清除缓存数据
+    public void clearCache(Long userId) {
+        String userKey = RedisKeyUtil.getUserKey(userId);
+        redisTemplate.delete(userKey);
     }
 }

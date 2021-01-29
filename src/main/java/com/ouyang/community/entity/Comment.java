@@ -10,9 +10,15 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class Comment extends EntityBase {
-    private Integer userId;
+    /**
+     * 评论用户的id
+     */
+    private Long userId;
     private Integer entityType;
     private Integer entityId;
+    /**
+     * 实体类的用户的id
+     */
     private Integer targetId;
     private String content;
     private Integer status;

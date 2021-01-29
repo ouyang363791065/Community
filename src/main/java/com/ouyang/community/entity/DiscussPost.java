@@ -8,9 +8,13 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.math.BigDecimal;
 
+/**
+ * 帖子评论
+ *
+ * @author feixi
+ */
 @Data
 @EqualsAndHashCode(callSuper = true)
-// TODO: es有关内容
 @Document(indexName = "discusspost", type = "_doc", shards = 6, replicas = 3)
 public class DiscussPost extends EntityBase {
     @Field(type = FieldType.Integer)

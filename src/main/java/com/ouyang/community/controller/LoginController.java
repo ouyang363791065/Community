@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -45,7 +46,7 @@ public class LoginController {
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
-    @RequestMapping(path = "/register", method = RequestMethod.GET)
+    @GetMapping("/register")
     public String getRegisterPage() {
         return "/site/register";
     }
@@ -55,11 +56,12 @@ public class LoginController {
         return "/site/login";
     }
 
-    @RequestMapping(path = "/register", method = RequestMethod.POST)
+    @PostMapping("/register")
     public String register(Model model, User user) {
         Map<String, Object> map = userService.register(user);
-        if (map == null || map.isEmpty()) {
+        if (map.get("url") != null) {
             model.addAttribute("msg", "注册成功,我们已经向您的邮箱发送了一封激活邮件,请尽快激活!");
+            model.addAttribute("url", map.get("url"));
             model.addAttribute("target", "/index");
             return "/site/operate-result";
         } else {
@@ -109,47 +111,5 @@ public class LoginController {
         } catch (IOException e) {
             log.error("响应验证码失败:" + e.getMessage());
         }
-    }
-
-    @PostMapping("/login")
-    public String login(String username,
-                        String password,
-                        String code,
-                        boolean rememberme,
-                        Model model,
-                        HttpServletResponse response,
-                        @CookieValue("kaptchaOwner") String kaptchaOwner) {
-        // 从cookie中取出验证码的UUID，去查redis中的值
-        String kaptcha = null;
-        if (StringUtils.isNotBlank(kaptchaOwner)) {
-            String kaptchaKey = RedisKeyUtil.getKaptchaKey(kaptchaOwner);
-            kaptcha = (String) redisTemplate.opsForValue().get(kaptchaKey);
-        }
-        if (StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code) || !kaptcha.equalsIgnoreCase(code)) {
-            model.addAttribute("codeMsg", "验证码不正确!");
-            return "/site/login";
-        }
-        // 检查账号，密码，设置过期时间
-        int expiredSeconds = rememberme ? CommunityEnum.REMEMBER_EXPIRED_SECONDS.getCode() : CommunityEnum.DEFAULT_EXPIRED_SECONDS.getCode();
-        Map<String, Object> map = userService.login(username, password, expiredSeconds);
-        if (map.containsKey("ticket")) {
-            Cookie cookie = new Cookie("ticket", map.get("ticket").toString());
-            cookie.setPath(contextPath);
-            cookie.setMaxAge(expiredSeconds);
-            response.addCookie(cookie);
-            return "redirect:/index";
-        } else {
-            model.addAttribute("usernameMsg", map.get("usernameMsg"));
-            model.addAttribute("passwordMsg", map.get("passwordMsg"));
-            return "/site/login";
-        }
-    }
-
-    @GetMapping("/logout")
-    public String logout(@CookieValue("ticket") String ticket) {
-        userService.logout(ticket);
-        // TODO: spring security的安全退出
-        //SecurityContextHolder.clearContext();
-        return "redirect:/login";
     }
 }
